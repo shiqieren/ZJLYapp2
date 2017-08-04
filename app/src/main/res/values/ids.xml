@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--防止adapter下标越界-->
+<resources>
+
+    <item type="id" name="tag_first"></item>
+    <item type="id" name="tag_second"></item>
+</resources>

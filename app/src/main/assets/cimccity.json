@@ -1,0 +1,108 @@
+{
+  "data": {
+    "web": [
+      {
+        "codeid": "SW0",
+        "codevalue": "没有税"
+      },
+      {
+        "codeid": "SW1",
+        "codevalue": "17%税"
+      }
+    ],
+    "custType": [
+      {
+        "codeid": "CT01",
+        "codevalue": "集团4S店G"
+      },
+      {
+        "codeid": "CT02",
+        "codevalue": "经销商T"
+      }
+    ],
+    "region": [
+      {
+        "categoryid": 0,
+        "categoryname": "A",
+        "superid": null,
+        "cateList": [
+          {
+            "categoryid": 84,
+            "categoryname": "AA1",
+            "categoryno": "PROV16",
+            "superid": 0,
+            "cateList": [
+              {
+                "cateList": null,
+                "categoryid": 9201,
+                "categoryname": "AAA1",
+                "categoryno": "PROV1601",
+                "superid": 84
+              },
+              {
+                "cateList": null,
+                "categoryid": 9203,
+                "categoryname": "AAA2",
+                "categoryno": "PROV1603",
+                "superid": 84
+              }
+            ]
+          },
+          {
+            "categoryid": 84,
+            "categoryname": "AA2",
+            "categoryno": "PROV16",
+            "superid": 0,
+            "cateList": [
+              {
+                "cateList": null,
+                "categoryid": 9201,
+                "categoryname": "AAA3",
+                "categoryno": "PROV1601",
+                "superid": 84
+              },
+              {
+                "cateList": null,
+                "categoryid": 9203,
+                "categoryname": "AAA4",
+                "categoryno": "PROV1603",
+                "superid": 84
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "categoryid": 1,
+        "categoryname": "B",
+        "superid": null,
+        "cateList": [
+          {
+            "categoryid": 84,
+            "categoryname": "BB1",
+            "categoryno": "PROV16",
+            "superid": 0,
+            "cateList": [
+              {
+                "cateList": null,
+                "categoryid": 9201,
+                "categoryname": "BBB1",
+                "categoryno": "PROV1601",
+                "superid": 84
+              },
+              {
+                "cateList": null,
+                "categoryid": 9203,
+                "categoryname": "BBB2",
+                "categoryno": "PROV1603",
+                "superid": 84
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "msg": "",
+  "success": true
+}

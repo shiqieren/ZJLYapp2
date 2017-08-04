@@ -34,7 +34,8 @@ public class PopuLinkmanListHolder extends BaseHolder<SelectLinkmanItem> {
 
     @Override
     public void refreshView(SelectLinkmanItem data) {
-        tvName.setText(data.getCustname());
-        tvVisiblecode.setText(data.getCustid());
+        tvName.setText(data.getPersonname().toString());
+        tvVisiblecode.setText(String.valueOf(data.getContpersonid()));
+
     }
 }

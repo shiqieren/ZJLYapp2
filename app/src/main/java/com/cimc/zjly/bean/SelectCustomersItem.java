@@ -6,286 +6,67 @@ package com.cimc.zjly.bean;
 
 public class SelectCustomersItem {
 
+
     /**
-     * address : null
-     * assist : null
-     * assisttel : null
-     * birthday : null
-     * business : null
-     * category : null
-     * companyid : null
-     * contemail : null
-     * contfax : null
-     * conthomepage : null
-     * contmobile : 0553-7527372
-     * contpersonid : 4301
-     * contphoto : null
-     * contpost : null
-     * contpostcode : null
-     * conttel : 0553-7527372
-     * createdate : null
-     * creator : null
-     * credno : null
-     * credtype : null
-     * custid : 4042
-     * custname : 集瑞联合卡车营销服务有限公司
-     * custtype : null
-     * department : null
-     * familyaddress : null
-     * familyarea : null
-     * familycity : null
-     * familypostcode : null
-     * familytel : null
-     * interest : null
-     * isactive : null
-     * modifyby : null
-     * msnqq : null
-     * nichname : null
-     * orgid : null
-     * otheraddress : null
-     * otherarea : null
-     * othercity : null
-     * otherpostcode : null
-     * othertel : null
-     * owner : null
-     * personname : 金融财务部
-     * remark : null
-     * sex : null
-     * skype : null
-     * summary : null
-     * ts : null
-     * type : null
-     * unitaddress : null
-     * unitarea : null
-     * unitcity : null
-     * unitid : null
-     * unitpostcode : null
-     * usual : null
-     * wangwang : null
+     * userid : 2
+     * custid : 2752
+     * customerno : 116657
+     * custname : 茂名市恒佳运输服务有限公司222222222
+     * custaddress : 广东茂名市茂名市光华南路文光二街8号805
+     * custmanagerid : 4551
+     * custmanagername : 周燕萍
+     * contpersonid : 4551
+     * signinaddress : 高科幼儿园
+     * sigininlat : 31.206388
+     * sigininlon : 121.640199
+     * visitsummary : 测试，待删除   修改111111111
+     * custphone :  0668-2517606
+     * modifiedby : 2
+     * creator : 555555928
+     * visitbegintime : 2017-07-29 15:22:03.29
+     * visitendtime : 2017-07-29 15:22:03.291
      */
 
-    private Object address;
-    private Object assist;
-    private Object assisttel;
-    private Object birthday;
-    private Object business;
-    private Object category;
-    private Object companyid;
-    private Object contemail;
-    private Object contfax;
-    private Object conthomepage;
-    private String contmobile;
-    private int contpersonid;
-    private Object contphoto;
-    private Object contpost;
-    private Object contpostcode;
-    private String conttel;
-    private Object createdate;
-    private Object creator;
-    private Object credno;
-    private Object credtype;
-    private String custid;
+    private int userid;
+    private int custid;
+    private String customerno;
     private String custname;
-    private Object custtype;
-    private Object department;
-    private Object familyaddress;
-    private Object familyarea;
-    private Object familycity;
-    private Object familypostcode;
-    private Object familytel;
-    private Object interest;
-    private Object isactive;
-    private Object modifyby;
-    private Object msnqq;
-    private Object nichname;
-    private Object orgid;
-    private Object otheraddress;
-    private Object otherarea;
-    private Object othercity;
-    private Object otherpostcode;
-    private Object othertel;
-    private Object owner;
-    private String personname;
-    private Object remark;
-    private Object sex;
-    private Object skype;
-    private Object summary;
-    private Object ts;
-    private Object type;
-    private Object unitaddress;
-    private Object unitarea;
-    private Object unitcity;
-    private Object unitid;
-    private Object unitpostcode;
-    private Object usual;
-    private Object wangwang;
+    private String custaddress;
+    private int custmanagerid;
+    private String custmanagername;
+    private int contpersonid;
+    private String signinaddress;
+    private double sigininlat;
+    private double sigininlon;
+    private String visitsummary;
+    private String custphone;
+    private int modifiedby;
+    private int creator;
+    private String visitbegintime;
+    private String visitendtime;
 
-    public Object getAddress() {
-        return address;
+    public int getUserid() {
+        return userid;
     }
 
-    public void setAddress(Object address) {
-        this.address = address;
+    public void setUserid(int userid) {
+        this.userid = userid;
     }
 
-    public Object getAssist() {
-        return assist;
-    }
-
-    public void setAssist(Object assist) {
-        this.assist = assist;
-    }
-
-    public Object getAssisttel() {
-        return assisttel;
-    }
-
-    public void setAssisttel(Object assisttel) {
-        this.assisttel = assisttel;
-    }
-
-    public Object getBirthday() {
-        return birthday;
-    }
-
-    public void setBirthday(Object birthday) {
-        this.birthday = birthday;
-    }
-
-    public Object getBusiness() {
-        return business;
-    }
-
-    public void setBusiness(Object business) {
-        this.business = business;
-    }
-
-    public Object getCategory() {
-        return category;
-    }
-
-    public void setCategory(Object category) {
-        this.category = category;
-    }
-
-    public Object getCompanyid() {
-        return companyid;
-    }
-
-    public void setCompanyid(Object companyid) {
-        this.companyid = companyid;
-    }
-
-    public Object getContemail() {
-        return contemail;
-    }
-
-    public void setContemail(Object contemail) {
-        this.contemail = contemail;
-    }
-
-    public Object getContfax() {
-        return contfax;
-    }
-
-    public void setContfax(Object contfax) {
-        this.contfax = contfax;
-    }
-
-    public Object getConthomepage() {
-        return conthomepage;
-    }
-
-    public void setConthomepage(Object conthomepage) {
-        this.conthomepage = conthomepage;
-    }
-
-    public String getContmobile() {
-        return contmobile;
-    }
-
-    public void setContmobile(String contmobile) {
-        this.contmobile = contmobile;
-    }
-
-    public int getContpersonid() {
-        return contpersonid;
-    }
-
-    public void setContpersonid(int contpersonid) {
-        this.contpersonid = contpersonid;
-    }
-
-    public Object getContphoto() {
-        return contphoto;
-    }
-
-    public void setContphoto(Object contphoto) {
-        this.contphoto = contphoto;
-    }
-
-    public Object getContpost() {
-        return contpost;
-    }
-
-    public void setContpost(Object contpost) {
-        this.contpost = contpost;
-    }
-
-    public Object getContpostcode() {
-        return contpostcode;
-    }
-
-    public void setContpostcode(Object contpostcode) {
-        this.contpostcode = contpostcode;
-    }
-
-    public String getConttel() {
-        return conttel;
-    }
-
-    public void setConttel(String conttel) {
-        this.conttel = conttel;
-    }
-
-    public Object getCreatedate() {
-        return createdate;
-    }
-
-    public void setCreatedate(Object createdate) {
-        this.createdate = createdate;
-    }
-
-    public Object getCreator() {
-        return creator;
-    }
-
-    public void setCreator(Object creator) {
-        this.creator = creator;
-    }
-
-    public Object getCredno() {
-        return credno;
-    }
-
-    public void setCredno(Object credno) {
-        this.credno = credno;
-    }
-
-    public Object getCredtype() {
-        return credtype;
-    }
-
-    public void setCredtype(Object credtype) {
-        this.credtype = credtype;
-    }
-
-    public String getCustid() {
+    public int getCustid() {
         return custid;
     }
 
-    public void setCustid(String custid) {
+    public void setCustid(int custid) {
         this.custid = custid;
+    }
+
+    public String getCustomerno() {
+        return customerno;
+    }
+
+    public void setCustomerno(String customerno) {
+        this.customerno = customerno;
     }
 
     public String getCustname() {
@@ -296,267 +77,107 @@ public class SelectCustomersItem {
         this.custname = custname;
     }
 
-    public Object getCusttype() {
-        return custtype;
+    public String getCustaddress() {
+        return custaddress;
     }
 
-    public void setCusttype(Object custtype) {
-        this.custtype = custtype;
+    public void setCustaddress(String custaddress) {
+        this.custaddress = custaddress;
     }
 
-    public Object getDepartment() {
-        return department;
+    public int getCustmanagerid() {
+        return custmanagerid;
     }
 
-    public void setDepartment(Object department) {
-        this.department = department;
+    public void setCustmanagerid(int custmanagerid) {
+        this.custmanagerid = custmanagerid;
     }
 
-    public Object getFamilyaddress() {
-        return familyaddress;
+    public String getCustmanagername() {
+        return custmanagername;
     }
 
-    public void setFamilyaddress(Object familyaddress) {
-        this.familyaddress = familyaddress;
+    public void setCustmanagername(String custmanagername) {
+        this.custmanagername = custmanagername;
     }
 
-    public Object getFamilyarea() {
-        return familyarea;
+    public int getContpersonid() {
+        return contpersonid;
     }
 
-    public void setFamilyarea(Object familyarea) {
-        this.familyarea = familyarea;
+    public void setContpersonid(int contpersonid) {
+        this.contpersonid = contpersonid;
     }
 
-    public Object getFamilycity() {
-        return familycity;
+    public String getSigninaddress() {
+        return signinaddress;
     }
 
-    public void setFamilycity(Object familycity) {
-        this.familycity = familycity;
+    public void setSigninaddress(String signinaddress) {
+        this.signinaddress = signinaddress;
     }
 
-    public Object getFamilypostcode() {
-        return familypostcode;
+    public double getSigininlat() {
+        return sigininlat;
     }
 
-    public void setFamilypostcode(Object familypostcode) {
-        this.familypostcode = familypostcode;
+    public void setSigininlat(double sigininlat) {
+        this.sigininlat = sigininlat;
     }
 
-    public Object getFamilytel() {
-        return familytel;
+    public double getSigininlon() {
+        return sigininlon;
     }
 
-    public void setFamilytel(Object familytel) {
-        this.familytel = familytel;
+    public void setSigininlon(double sigininlon) {
+        this.sigininlon = sigininlon;
     }
 
-    public Object getInterest() {
-        return interest;
+    public String getVisitsummary() {
+        return visitsummary;
     }
 
-    public void setInterest(Object interest) {
-        this.interest = interest;
+    public void setVisitsummary(String visitsummary) {
+        this.visitsummary = visitsummary;
     }
 
-    public Object getIsactive() {
-        return isactive;
+    public String getCustphone() {
+        return custphone;
     }
 
-    public void setIsactive(Object isactive) {
-        this.isactive = isactive;
+    public void setCustphone(String custphone) {
+        this.custphone = custphone;
     }
 
-    public Object getModifyby() {
-        return modifyby;
+    public int getModifiedby() {
+        return modifiedby;
     }
 
-    public void setModifyby(Object modifyby) {
-        this.modifyby = modifyby;
+    public void setModifiedby(int modifiedby) {
+        this.modifiedby = modifiedby;
     }
 
-    public Object getMsnqq() {
-        return msnqq;
+    public int getCreator() {
+        return creator;
     }
 
-    public void setMsnqq(Object msnqq) {
-        this.msnqq = msnqq;
+    public void setCreator(int creator) {
+        this.creator = creator;
     }
 
-    public Object getNichname() {
-        return nichname;
+    public String getVisitbegintime() {
+        return visitbegintime;
     }
 
-    public void setNichname(Object nichname) {
-        this.nichname = nichname;
+    public void setVisitbegintime(String visitbegintime) {
+        this.visitbegintime = visitbegintime;
     }
 
-    public Object getOrgid() {
-        return orgid;
+    public String getVisitendtime() {
+        return visitendtime;
     }
 
-    public void setOrgid(Object orgid) {
-        this.orgid = orgid;
-    }
-
-    public Object getOtheraddress() {
-        return otheraddress;
-    }
-
-    public void setOtheraddress(Object otheraddress) {
-        this.otheraddress = otheraddress;
-    }
-
-    public Object getOtherarea() {
-        return otherarea;
-    }
-
-    public void setOtherarea(Object otherarea) {
-        this.otherarea = otherarea;
-    }
-
-    public Object getOthercity() {
-        return othercity;
-    }
-
-    public void setOthercity(Object othercity) {
-        this.othercity = othercity;
-    }
-
-    public Object getOtherpostcode() {
-        return otherpostcode;
-    }
-
-    public void setOtherpostcode(Object otherpostcode) {
-        this.otherpostcode = otherpostcode;
-    }
-
-    public Object getOthertel() {
-        return othertel;
-    }
-
-    public void setOthertel(Object othertel) {
-        this.othertel = othertel;
-    }
-
-    public Object getOwner() {
-        return owner;
-    }
-
-    public void setOwner(Object owner) {
-        this.owner = owner;
-    }
-
-    public String getPersonname() {
-        return personname;
-    }
-
-    public void setPersonname(String personname) {
-        this.personname = personname;
-    }
-
-    public Object getRemark() {
-        return remark;
-    }
-
-    public void setRemark(Object remark) {
-        this.remark = remark;
-    }
-
-    public Object getSex() {
-        return sex;
-    }
-
-    public void setSex(Object sex) {
-        this.sex = sex;
-    }
-
-    public Object getSkype() {
-        return skype;
-    }
-
-    public void setSkype(Object skype) {
-        this.skype = skype;
-    }
-
-    public Object getSummary() {
-        return summary;
-    }
-
-    public void setSummary(Object summary) {
-        this.summary = summary;
-    }
-
-    public Object getTs() {
-        return ts;
-    }
-
-    public void setTs(Object ts) {
-        this.ts = ts;
-    }
-
-    public Object getType() {
-        return type;
-    }
-
-    public void setType(Object type) {
-        this.type = type;
-    }
-
-    public Object getUnitaddress() {
-        return unitaddress;
-    }
-
-    public void setUnitaddress(Object unitaddress) {
-        this.unitaddress = unitaddress;
-    }
-
-    public Object getUnitarea() {
-        return unitarea;
-    }
-
-    public void setUnitarea(Object unitarea) {
-        this.unitarea = unitarea;
-    }
-
-    public Object getUnitcity() {
-        return unitcity;
-    }
-
-    public void setUnitcity(Object unitcity) {
-        this.unitcity = unitcity;
-    }
-
-    public Object getUnitid() {
-        return unitid;
-    }
-
-    public void setUnitid(Object unitid) {
-        this.unitid = unitid;
-    }
-
-    public Object getUnitpostcode() {
-        return unitpostcode;
-    }
-
-    public void setUnitpostcode(Object unitpostcode) {
-        this.unitpostcode = unitpostcode;
-    }
-
-    public Object getUsual() {
-        return usual;
-    }
-
-    public void setUsual(Object usual) {
-        this.usual = usual;
-    }
-
-    public Object getWangwang() {
-        return wangwang;
-    }
-
-    public void setWangwang(Object wangwang) {
-        this.wangwang = wangwang;
+    public void setVisitendtime(String visitendtime) {
+        this.visitendtime = visitendtime;
     }
 }

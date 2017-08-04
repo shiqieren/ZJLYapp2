@@ -25,15 +25,12 @@ public class PopuCustomerListHolder extends BaseHolder<SelectCustomersItem> {
         // 2. 初始化控件
         tvVisiblecode = (TextView) view.findViewById(R.id.tvVisible_code);
         tvName = (TextView) view.findViewById(R.id.visit_name);
-
-
-
         return view;
     }
 
     @Override
     public void refreshView(SelectCustomersItem data) {
         tvName.setText(data.getCustname());
-        tvVisiblecode.setText(data.getCustid());
+        tvVisiblecode.setText(String.valueOf(data.getCustid()));
     }
 }
