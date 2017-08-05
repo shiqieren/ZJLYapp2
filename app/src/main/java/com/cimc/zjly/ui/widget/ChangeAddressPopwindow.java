@@ -6,39 +6,28 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.PopupWindow;
 import android.widget.TextView;
-import android.widget.Toast;
 
 
 import com.cimc.zjly.R;
-import com.cimc.zjly.Setting;
 import com.cimc.zjly.bean.CustomerSelectSqlDataOption;
-import com.cimc.zjly.bean.RequestBean.RuquMyVisit;
 import com.cimc.zjly.bean.Result;
 import com.cimc.zjly.ui.widget.wheelviewaddress.OnWheelChangedListener;
 import com.cimc.zjly.ui.widget.wheelviewaddress.OnWheelScrollListener;
 import com.cimc.zjly.ui.widget.wheelviewaddress.WheelView;
 import com.cimc.zjly.ui.widget.wheelviewaddress.adapter.AbstractWheelTextAdapter1;
 import com.cimc.zjly.utils.GetAssert;
-import com.cimc.zjly.utils.UIUtils;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.zhy.http.okhttp.OkHttpUtils;
-import com.zhy.http.okhttp.callback.StringCallback;
 
-import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import okhttp3.Call;
-import okhttp3.MediaType;
+import static com.cimc.zjly.utils.UIUtils.getContext;
 
 public class ChangeAddressPopwindow extends PopupWindow implements View.OnClickListener {
 
@@ -354,13 +343,45 @@ public ChangeAddressPopwindow(final Context context) {
 	 */
 	//private void initDatas(int userId)
 	private void initDatas()
-	{
+	{	//网络请求
+		/*String requid = Setting.getCachedUID(getContext());
+		if (requid != ""){
+			//网络请求  加载默认已有的字段
+			String url = Setting.API_SERVER_URL + "/cust/getCustSelect";
+			OkHttpUtils
+					.post()
+					.url(url)
+					.addHeader("checkTokenKey","2FD08ED0-E53B-48B1-B8E6-E6B4290A2770")
+					.addHeader("sessionKey","2")
+					//获取当前登录用户的全部客户列表
+					.addParams("userId ",requid)
+					.build()
+					.execute(
+							new StringCallback() {
+								@Override
+								public void onError(Call call, Exception e, int id) {
+									Toast.makeText(getContext(),"????"+e.toString(),Toast.LENGTH_SHORT).show();
+
+								}
+
+								@Override
+								public void onResponse(String response, int id) {
+									Type RegionType = new TypeToken<Result<CustomerSelectSqlDataOption>>(){}.getType();
+									Result<CustomerSelectSqlDataOption> Regionstatus = new Gson().fromJson(response, RegionType);
 
 
-
+								}
+							}
+					);
+		}else {
+			Toast.makeText(getContext(),"获取不到当前登录用户uid",Toast.LENGTH_SHORT).show();
+		}*/
 		//本地测试大区域list
 		Type RegionType = new TypeToken<Result<CustomerSelectSqlDataOption>>(){}.getType();
-		Result<CustomerSelectSqlDataOption> Regionstatus = new Gson().fromJson(GetAssert.getJson("cimccity.json",UIUtils.getContext()), RegionType);
+		Result<CustomerSelectSqlDataOption> Regionstatus = new Gson().fromJson(GetAssert.getJson("cimccity.json", getContext()), RegionType);
+
+
+		//网络请求
 		List<CustomerSelectSqlDataOption.RegionBean> regionList = Regionstatus.getData().getRegion();
 		mProvinceDatas = new String[regionList.size()];
 

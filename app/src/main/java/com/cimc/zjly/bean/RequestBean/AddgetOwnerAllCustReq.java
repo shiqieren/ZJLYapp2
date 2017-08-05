@@ -5,8 +5,8 @@ package com.cimc.zjly.bean.RequestBean;
  * Created by lyw on 2017/8/2.
  */
 
-public class OwnerAllCustReq {
-    public OwnerAllCustReq(int owner) {
+public class AddgetOwnerAllCustReq {
+    public AddgetOwnerAllCustReq(int owner) {
         this.owner = owner;
     }
     /**

@@ -4,8 +4,8 @@ package com.cimc.zjly.bean.RequestBean;
  * Created by lyw on 2017/8/2.
  */
 
-public class CustidLinkmanReq {
-    public CustidLinkmanReq(String custid) {
+public class AddgetCustidLinkmanReq {
+    public AddgetCustidLinkmanReq(String custid) {
         this.custid = custid;
     }
 
