@@ -1,10 +1,10 @@
 package com.cimc.zjly.ui.frags.subfrags;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.annotation.Nullable;
-import android.text.Editable;
-import android.text.TextWatcher;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -19,10 +19,12 @@ import android.widget.Toast;
 import com.cimc.zjly.R;
 import com.cimc.zjly.Setting;
 import com.cimc.zjly.bean.CustomerSelectSqlDataOption;
+import com.cimc.zjly.bean.CustomersDetailItem;
 import com.cimc.zjly.bean.RequestBean.AddCustomerReq;
 import com.cimc.zjly.bean.Result;
 import com.cimc.zjly.ui.adapter.MyCusTypeListPopuAdapter;
 import com.cimc.zjly.ui.adapter.MyWebListPopuAdapter;
+import com.cimc.zjly.ui.atys.ReadEditDetailActivity;
 import com.cimc.zjly.ui.callback.StringDialogCallback;
 import com.cimc.zjly.ui.frags.BaseFragment;
 import com.cimc.zjly.ui.widget.ChangeAddressPopwindow;
@@ -43,14 +45,11 @@ import java.util.List;
 import okhttp3.Call;
 import okhttp3.MediaType;
 
-import static com.cimc.zjly.utils.UIUtils.getColor;
-import static com.cimc.zjly.utils.UIUtils.getContext;
-
 /**
  * Created by lyw on 2017/8/1.
  */
 
-public class AddCustomerFragment extends BaseFragment implements View.OnClickListener {
+public class ReadCustomerDetailFragment extends BaseFragment implements View.OnClickListener {
 
     public AddCustomerReq getmAddCustomer() {
         return mAddCustomer;
@@ -85,7 +84,9 @@ public class AddCustomerFragment extends BaseFragment implements View.OnClickLis
     private TextView mContact_province;
     private TextView mContact_city;
     private TextView mContact_familyaddress;
-    private TextView mContact_summary;
+    private EditText mContact_summary;
+    private TextView mCustomerno;
+    private EditText mSummary;
     //传递id
     private TextView mCusttypecodeid;
     private TextView mWebcodeid;
@@ -100,9 +101,10 @@ public class AddCustomerFragment extends BaseFragment implements View.OnClickLis
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
         mAddCustomer = new AddCustomerReq();
         mAddCustomerContactBean = new AddCustomerReq.ContactBean();
-        mView = inflater.inflate(R.layout.fragment_addcustomer_info,container,false);
+        mView = inflater.inflate(R.layout.fragment_readdetailcustomer_info,container,false);
         linelayoutall = (LinearLayout) mView.findViewById(R.id.linelay_all);
         linelayoutall.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -118,7 +120,8 @@ public class AddCustomerFragment extends BaseFragment implements View.OnClickLis
         mCreatedate =(TextView) mView.findViewById(R.id.createdate_tv);
         mCusttype =(TextView) mView.findViewById(R.id.custtype_tv);
         mCustname =(EditText)mView.findViewById(R.id.custname_ev);
-
+        mCustomerno=(TextView) mView.findViewById(R.id.custtype_tv);
+        mSummary=(EditText)mView.findViewById(R.id.custname_ev);
         /////
         mShortname =(EditText)mView.findViewById(R.id.shortname_ev);
         mCusttel =(EditText)mView.findViewById(R.id.custtel_ev);
@@ -149,6 +152,7 @@ public class AddCustomerFragment extends BaseFragment implements View.OnClickLis
          mProvincecategoryno=(TextView)mView.findViewById(R.id.provincecategoryno_tv);
          mCitycategoryno=(TextView)mView.findViewById(R.id.citycategoryno_tv);
 
+        readData();
         initView();
         initData();
         mView.findViewById(R.id.commit_addcusvisdata).setOnClickListener(new View.OnClickListener() {
@@ -157,9 +161,91 @@ public class AddCustomerFragment extends BaseFragment implements View.OnClickLis
                 comiitadddata();
             }
         });
+        mView.findViewById(R.id.commit_linkman).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentManager fm = getActivity().getSupportFragmentManager();
+                FragmentTransaction transaction= fm.beginTransaction();
+                transaction.replace(R.id.addsubmit_page, new AddLinkmanFragment());
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
+        });
+        mView.findViewById(R.id.commit_visit).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentManager fm = getActivity().getSupportFragmentManager();
+                FragmentTransaction transaction= fm.beginTransaction();
+                transaction.replace(R.id.addsubmit_page, new AddVisitCusFragment());
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
+        });
+        mView.findViewById(R.id.commit_intent).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentManager fm = getActivity().getSupportFragmentManager();
+                FragmentTransaction transaction= fm.beginTransaction();
+                transaction.replace(R.id.addsubmit_page, new AddLinkmanFragment());
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
+        });
+
         return mView;
     }
 
+    private void readData(){
+        int custId = (Integer)getActivity().getIntent().getIntExtra("custId ",-1);
+        String reqcustId = Integer.toString(custId);
+        if(custId == -1){
+            Toast.makeText(getContext(),"未获取到客户id",Toast.LENGTH_SHORT).show();
+        }else {
+            //获取到用户具体传值时网络请求加载默认已有的字段
+            String url = Setting.API_SERVER_URL + "/cust/getCurrInfo";
+
+            OkHttpUtils
+                    .post()
+                    .url(url)
+                    .addHeader("checkTokenKey","2FD08ED0-E53B-48B1-B8E6-E6B4290A2770")
+                    .addHeader("sessionKey","2")
+                    .addParams("custId",reqcustId)
+                    .build()
+                    .execute(
+                            new StringDialogCallback(getActivity()){
+                                @Override
+                                public void onError(Call call, Exception e, int id) {
+
+                                    dismissDialog();
+                                    Toast.makeText(getContext(),"????"+e.toString(),Toast.LENGTH_SHORT).show();
+                                }
+
+                                @Override
+                                public void onResponse(String response, int id) {
+                                    dismissDialog();
+                                    Type userlistType = new TypeToken<Result<CustomersDetailItem>>
+                                            (){}.getType();
+                                    Result<CustomersDetailItem> status = new Gson().fromJson(response, userlistType);
+                                    CustomersDetailItem thisobj = status.getData();
+                                    mCustomerno.setText(thisobj.getCustomerno());
+                                    mCusttype.setText(thisobj.getCusttype());
+                                    mCustname.setText(thisobj.getCustname());
+                                    mShortname.setText(thisobj.getShortname());
+                                    mCusttel.setText(thisobj.getCusttel());
+                                    mFax.setText(thisobj.getFax());
+                                    mCountry.setText(thisobj.getCountry());
+                                    mProvince.setText(thisobj.getProvince());
+                                     mCity.setText(thisobj.getCity());
+                                    mFamilyaddress.setText(thisobj.getCustaddress());
+                                    mZipcode.setText(thisobj.getZipcode());
+                                    mWeb.setText(thisobj.getWeb());
+                                    mMakeup.setText(thisobj.getMakeup());
+                                    mSummary.setText(thisobj.getSummary().toString());
+                                }
+                            }
+                    );
+        }
+    }
 
     private void comiitadddata() {
         //提交表单数据

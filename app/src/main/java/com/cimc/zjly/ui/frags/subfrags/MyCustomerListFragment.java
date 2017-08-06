@@ -138,8 +138,10 @@ public class MyCustomerListFragment extends BaseFragment {
 
                     intent.putExtra("custId", viscus.getCustid());
                     // intent.putExtra("cvid", 10);
-                    intent.putExtra("editmode","read");
+                    intent.putExtra("editmode","readcustomer");
                     startActivity(intent);
+                }else {
+
                 }
                 //  }
 

@@ -70,6 +70,14 @@
 	            android:layout_height="match_parent"
 	            android:layout_gravity="center_vertical"
 	            />
+			<com.cimc.zjly.ui.widget.wheelviewaddress.WheelView
+				android:id="@+id/wv_address_citycode"
+				android:visibility="gone"
+				android:layout_width="0dip"
+				android:layout_weight="1"
+				android:layout_height="match_parent"
+				android:layout_gravity="center_vertical"
+				/>
 
             <com.cimc.zjly.ui.widget.wheelviewaddress.WheelView
                 android:id="@+id/wv_address_area"
@@ -78,6 +86,14 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center_vertical"
                 />
+			<com.cimc.zjly.ui.widget.wheelviewaddress.WheelView
+				android:id="@+id/wv_address_areacode"
+				android:visibility="gone"
+				android:layout_width="0dip"
+				android:layout_weight="1"
+				android:layout_height="match_parent"
+				android:layout_gravity="center_vertical"
+				/>
 	    </LinearLayout>
 
     </LinearLayout>

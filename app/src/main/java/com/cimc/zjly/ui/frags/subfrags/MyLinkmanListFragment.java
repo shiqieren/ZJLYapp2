@@ -133,9 +133,9 @@ public class MyLinkmanListFragment extends Fragment {
                     Intent intent = new Intent(getActivity(),
                             ReadEditDetailActivity.class);
 
-                    intent.putExtra("custId", viscus.getCustid());
+                    intent.putExtra("contPersonId", viscus.getContpersonid());
                     // intent.putExtra("cvid", 10);
-                    intent.putExtra("editmode","read");
+                    intent.putExtra("editmode","readlinkman");
                     startActivity(intent);
                 }
                 //  }
